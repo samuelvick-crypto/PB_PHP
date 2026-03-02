@@ -26,6 +26,18 @@ class UsuarioController{
         echo"<pre>";
         print_r($usuario);
         echo"</pre>";
-        require 'View/usuarioCadastrar.php';
+        require 'View/usuarioListar.php';
+    }
+
+    public function telaEditar(){
+        $usuario = Usuario::buscar($_GET['id']);
+        require 'View/usuarioEditar.php';
+    }
+
+    public function atualizar(){
+        $usuario = new Usuario($_POST['nome'], $_POST['email']);
+        $usuario->atualizar($_GET['id']);
+        header('Location: /PB_PHP/MVCExemplos/usuario/telaEditar?id='.($_GET['id']));
+        exit;
     }
 }

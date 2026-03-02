@@ -16,8 +16,15 @@ switch ($rout) {
 
     case 'usuario/listar':
         $usuarioController->listarUsuario();
-        break;  
+        break;
 
+    case 'usuario/telaEditar':
+        $usuarioController->telaEditar();
+        break;
+
+    case 'usuario/atualizar':
+        $usuarioController->atualizar();
+        break;
     default:
         echo "Página não encontada";
         break;
