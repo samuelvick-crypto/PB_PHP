@@ -36,4 +36,10 @@ class Usuario{
             ];
         }
     }
+
+    public static function excluir($id){
+        if(isset($_SESSION['usuarios'][$id])){
+            unset($_SESSION['usuarios'][$id]);
+        }
+    }
 }

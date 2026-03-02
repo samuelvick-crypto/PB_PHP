@@ -6,25 +6,31 @@ $usuarioController = new UsuarioController();
 $rout = $_GET["route"] ?? '';
 
 switch ($rout) {
-    case 'usuario/telaCadastro':
-        $usuarioController->telaCadastro();
-        break;
-
-    case "usuario/salvar":
-        $usuarioController->cadastrar();
-        break;
 
     case 'usuario/listar':
         $usuarioController->listarUsuario();
+        break;
+
+    case 'usuario/telaCadastro':
+        $usuarioController->telaCadastro();
         break;
 
     case 'usuario/telaEditar':
         $usuarioController->telaEditar();
         break;
 
+    case "usuario/salvar":
+        $usuarioController->cadastrar();
+        break;
+
     case 'usuario/atualizar':
         $usuarioController->atualizar();
         break;
+
+    case 'usuario/excluir':
+        $usuarioController->excluir();
+        break;
+    
     default:
         echo "Página não encontada";
         break;
